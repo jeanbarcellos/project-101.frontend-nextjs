@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <h1>Hello, Next.js!</h1>
+      <h1 className="mb-15">Hello, Next.js!</h1>
       <ul>
         <li>
           <Link href="/">Home</Link>
