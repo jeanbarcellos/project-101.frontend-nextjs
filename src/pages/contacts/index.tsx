@@ -1,7 +1,7 @@
-export default function AboutAllPage() {
+export default function AboutPage() {
   return (
     <>
-      <h1 className='mb-3'>About All!</h1>
+      <h1 className='mb-3'>Contacts!</h1>
       <p>
         Praesent rhoncus turpis sit amet leo euismod, mollis vehicula dolor efficitur. Nam a varius nisi. Fusce congue blandit lacus ac tempus. Praesent porta
         congue orci, vitae imperdiet libero. Nulla eleifend consectetur tortor at fermentum. Donec massa tellus, fermentum at libero in, rutrum elementum dui.
@@ -16,5 +16,5 @@ export default function AboutAllPage() {
         euismod urna non felis volutpat vulputate. Nullam vel sapien finibus purus consectetur consequat. In in dolor rutrum, iaculis metus in, consequat nisi.
       </p>
     </>
-  );
+  )
 }
