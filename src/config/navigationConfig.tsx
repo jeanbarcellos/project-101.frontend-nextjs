@@ -1,9 +1,15 @@
 const navigationConfig = [
   {
     id: 'home',
-    icon: 'dashboard',
+    icon: 'home',
     text: 'Home',
     url: '/'
+  },
+  {
+    id: 'dashboard',
+    icon: 'dashboard',
+    text: 'Dashboard',
+    url: '/dashboard'
   },
   {
     id: 'about',
@@ -13,15 +19,22 @@ const navigationConfig = [
   },
   {
     id: 'posts',
-    icon: 'turned_in',
+    icon: 'feed',
     text: 'Posts',
     url: '/posts'
   },
   {
     id: 'contacts',
-    icon: 'turned_in',
+    icon: 'contacts',
     text: 'Contacts',
     url: '/contacts'
+  },
+  {
+    id: 'integrations',
+    icon: 'layers',
+    text: 'Examples & Tests',
+    url: '/examples',
+    auth: false
   }
 ]
 

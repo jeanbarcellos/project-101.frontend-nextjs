@@ -1,21 +1,21 @@
 import clsx from 'clsx'
 // import * as PropTypes from 'prop-types'
 
-// Alias
-type PageType = {
-  className?: any
-  header?: any
-  content?: any
-  classes?: any
+interface ClassesProps {
+  root?: string | ''
+  header?: string | ''
+  content?: string | ''
 }
 
-// Page.propTypes = {
-//   header: PropTypes.node,
-//   content: PropTypes.node
-// }
+// Alias
+interface PageProps {
+  header?: React.ReactNode
+  content?: React.ReactNode
+  className?: string
+  classes?: any //ClassesProps
+}
 
-
-const Page = (props: PageType) => {
+const Page = (props: PageProps) => {
   const { classes } = props
 
   return (
@@ -40,7 +40,11 @@ const Page = (props: PageType) => {
 // }
 
 // Page.defaultProps = {
-//   classes: {}
+//   classes: {
+//     root: '',
+//     header: '',
+//     content: ''
+//   }
 // }
 
 export default Page

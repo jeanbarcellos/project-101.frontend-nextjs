@@ -1,13 +1,17 @@
 import Page from '@/components/page/Page'
 import PageTitle from '@/components/page/PageTitle'
+import { Button } from '@mui/material'
+import { useRouter } from 'next/router'
 
-export default function ContactsPage() {
+export default function PostDetailPage() {
+  const router = useRouter()
+
   return (
     <Page
       classes={{
-        root: 'p-24 text-justify'
+        root: 'p-24'
       }}
-      header={<PageTitle>Contacts!</PageTitle>}
+      header={<PageTitle>Post id: {router.query.id}!</PageTitle>}
       content={
         <>
           <p>
@@ -23,6 +27,9 @@ export default function ContactsPage() {
             sit amet euismod eleifend, imperdiet sed quam. In semper tortor sit amet tempus viverra. Mauris quis ornare diam. Nunc sit amet ipsum eget ipsum
             imperdiet viverra. Donec euismod urna non felis volutpat vulputate. Nullam vel sapien finibus purus consectetur consequat. In in dolor rutrum,
             iaculis metus in, consequat nisi.
+          </p>
+          <p>
+            <Button onClick={() => router.push('/posts')}>Voltar </Button>
           </p>
         </>
       }
