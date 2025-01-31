@@ -1,7 +1,9 @@
+'use client'
 import layoutConfig from '@/config/layoutConfig'
 import navigationConfig from '@/config/navigationConfig'
-import { CssBaseline, List, ListItem, ListItemText, styled } from '@mui/material'
+import { CssBaseline, Icon, List, ListItem, ListItemIcon, ListItemText, styled } from '@mui/material'
 import Link from 'next/link'
+
 
 type InputProps = {
   config: any
@@ -51,7 +53,7 @@ const Main = styled('main')(() => ({
   flexGrow: 1,
   height: '100vh',
   overflow: 'auto',
-  padding: 30
+  padding: '0'
 }))
 
 const ToolbarSpacer = styled('div')(() => ({
@@ -96,6 +98,9 @@ export default function Layout001({ children }: { children: React.ReactNode }) {
         <List>
           {navigationConfig.map(item => (
             <ListItem key={item.id} component={Link} href={item.url}>
+              <ListItemIcon>
+                <Icon>{item.icon}</Icon>
+              </ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
           ))}
