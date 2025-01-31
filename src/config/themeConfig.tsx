@@ -1,16 +1,26 @@
-import { orange } from '@mui/material/colors'
+'use client'
 import { ptBR } from '@mui/material/locale'
 import { createTheme } from '@mui/material/styles'
+import { Roboto } from 'next/font/google'
+
+export const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto'
+})
 
 const themeConfig = createTheme(
   {
+    cssVariables: true,
     palette: {
-    //   type: 'light'
+      mode: 'light'
     },
     // status: {
     //   danger: orange[500]
     // },
     typography: {
+      fontFamily: 'var(--font-roboto)',
       htmlFontSize: 10,
       fontSize: 13,
       fontWeightLight: 300,
