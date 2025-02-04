@@ -1,6 +1,6 @@
 const layoutConfig = {
   drawer: {
-    width: 200
+    width: 240
   },
 
   toolbar: {

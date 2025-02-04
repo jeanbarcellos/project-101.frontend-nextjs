@@ -44,3 +44,11 @@ https://dev.to/sabbirsobhani/google-icons-from-google-fonts-with-nextjs-11pa
 https://mui.com/material-ui/icons/
 
 https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
+
+https://dev.to/bytebodger/default-props-in-react-typescript-2o5o
+
+https://nextjs.org/docs/app/building-your-application/styling/tailwind-css
+
+https://zustand.docs.pmnd.rs/guides/nextjs
+
+https://medium.com/@harshdigwani/redux-vs-context-api-vs-local-storage-bced5118c531

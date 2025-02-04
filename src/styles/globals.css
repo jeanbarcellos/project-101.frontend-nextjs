@@ -1,8 +1,11 @@
+/* Normalize.css */
+@import-normalize;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@material-ui/styles
+/* @material-ui/styles */
 
 :root {
   /*--background: #ffffff;
