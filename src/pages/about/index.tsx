@@ -1,4 +1,3 @@
-
 import Page from '@/components/page/Page'
 import PageTitle from '@/components/page/PageTitle'
 
@@ -8,7 +7,7 @@ export default function AboutPage() {
       classes={{
         root: 'p-24'
       }}
-      header={<PageTitle>About!</PageTitle>}
+      header={<PageTitle>About</PageTitle>}
       content={
         <>
           <p>
@@ -86,4 +85,3 @@ export default function AboutPage() {
     />
   )
 }
-

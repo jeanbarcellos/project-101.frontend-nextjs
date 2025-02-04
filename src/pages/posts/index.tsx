@@ -1,13 +1,19 @@
 import Page from '@/components/page/Page'
 import PageTitle from '@/components/page/PageTitle'
+import { Button, Icon } from '@mui/material'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function PostPage() {
+  const router = useRouter()
+
   const posts = [
     { id: 1, title: 'Post 1' },
     { id: 2, title: 'Post 2' },
     { id: 3, title: 'Post 3' }
   ]
+
+  const handleBack = () => router.push('/')
 
   return (
     <Page
@@ -27,7 +33,9 @@ export default function PostPage() {
             ))}
           </ul>
           <p>
-            <Link href='/'>Voltar</Link>
+            <Button startIcon={<Icon>arrow_back_ios</Icon>} variant='contained' color='secondary' onClick={handleBack}>
+              Voltar
+            </Button>
           </p>
         </>
       }

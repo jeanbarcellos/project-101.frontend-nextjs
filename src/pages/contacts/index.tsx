@@ -7,7 +7,7 @@ export default function ContactsPage() {
       classes={{
         root: 'p-24 text-justify'
       }}
-      header={<PageTitle>Contacts!</PageTitle>}
+      header={<PageTitle>Contacts</PageTitle>}
       content={
         <>
           <p>

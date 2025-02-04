@@ -1,7 +1,7 @@
-import Page from "@/components/page/Page";
-import PageTitle from "@/components/page/PageTitle";
-import { Button } from "@mui/material";
-import { useRouter } from "next/router";
+import Page from '@/components/page/Page'
+import PageTitle from '@/components/page/PageTitle'
+import { Button } from '@mui/material'
+import { useRouter } from 'next/router'
 
 export default function AboutAllPage() {
   const router = useRouter()
