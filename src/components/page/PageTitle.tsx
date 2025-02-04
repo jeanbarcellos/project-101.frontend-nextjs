@@ -1,11 +1,10 @@
-import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography'
 
 interface PageTitle {
   children: React.ReactNode
 }
 
-// const PageTitle = ( props : PageTitle ): JSX.Element => {
-const PageTitle = ( props : PageTitle ) => {
+const PageTitle = (props: PageTitle) => {
   return (
     <Typography variant='h3' component='h3' className='mb-24'>
       {props.children}
@@ -13,5 +12,4 @@ const PageTitle = ( props : PageTitle ) => {
   )
 }
 
-export default PageTitle;
-
+export default PageTitle

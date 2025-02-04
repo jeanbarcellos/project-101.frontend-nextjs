@@ -1,50 +1,30 @@
 import clsx from 'clsx'
-// import * as PropTypes from 'prop-types'
+import { memo } from "react"
 
-interface ClassesProps {
+interface PageClassesProps {
   root?: string | ''
   header?: string | ''
   content?: string | ''
 }
 
-// Alias
 interface PageProps {
   header?: React.ReactNode
-  content?: React.ReactNode
+  content: React.ReactNode
   className?: string
-  classes?: any //ClassesProps
+  classes?: Partial<PageClassesProps>
 }
 
 const Page = (props: PageProps) => {
-  const { classes } = props
+  const { header, content, className, classes } = props
 
   return (
-    <div id='page-root' className={clsx(classes.root, props.className)}>
-      {props.header && (
-        <div id='page-header' className={classes.header}>
-          {props.header}
-        </div>
-      )}
-      {props.content && (
-        <div id='page-content' className={classes.content}>
-          {props.content}
-        </div>
-      )}
+    <div id='page-root' className={clsx(classes?.root, className)}>
+      {header && <div id='page-header' className={classes?.header}>{header}</div>}
+      {content && <div id='page-content' className={classes?.content}>{content}</div>}
     </div>
   )
 }
 
-// Page.propTypes = {
-//   header: PropTypes.node,
-//   content: PropTypes.node
-// }
+Page.displayName = "Page"
 
-// Page.defaultProps = {
-//   classes: {
-//     root: '',
-//     header: '',
-//     content: ''
-//   }
-// }
-
-export default Page
+export default memo(Page)
