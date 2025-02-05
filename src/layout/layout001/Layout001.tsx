@@ -5,6 +5,7 @@ import Footer from './Footer'
 import Main from './Main'
 import NavBar from './NavBar'
 import Toolbar from './Toolbar'
+import { memo } from 'react'
 
 interface Layout001Props {
   children: React.ReactNode
@@ -19,7 +20,7 @@ const Root = styled('div')(({ theme }) => ({
   // flex: '1 1 auto',
 }))
 
-export default function Layout001(props: Layout001Props) {
+function Layout001(props: Layout001Props) {
   return (
     <Root id='layout-root'>
       <CssBaseline />
@@ -34,3 +35,5 @@ export default function Layout001(props: Layout001Props) {
     </Root>
   )
 }
+
+export default memo(Layout001)

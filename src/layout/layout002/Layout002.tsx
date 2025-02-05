@@ -1,4 +1,6 @@
-export default function Layout002({ children }: { children: React.ReactNode }) {
+import { memo } from "react"
+
+function Layout002({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className='mb-10'>Layout 002 - Mavbar</div>
@@ -9,3 +11,4 @@ export default function Layout002({ children }: { children: React.ReactNode }) {
     </>
   )
 }
+export default memo(Layout002)
