@@ -1,41 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto 101 (Frontend em Next.js)
 
-## Getting Started
+Implementação de um projeto do zero em Next.js
 
-First, run the development server:
+## Objetivo
+
+Implementar um sistema do zero utilizando Next.js e adicionando recursos e bibliotecas durante o desenvolvimento, com a finalidade de revisar o que foi aprendido em meses de trabalho e estudos em Frontend.
+
+## Tecnologias/pacotes utilizados
+
+- Material-UI
+- Tailwind CSS
+
+## Extras
+
+- CSS injection order
+
+  https://material-ui.com/styles/advanced/#css-injection-order
+
+## TO-DO
+
+- Validação de Formulário
+- Router
+- Redux
+- Lodash
+- Auth JWT / OAuth / Firebase
+
+## Estrutura
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+root/
+  build/                        # Arquivos para produção
+  node_modules/                 # Dependências do Projeto
+  public/                       # Assets, arquivos estáticos que não serão processados pelo webpack
+  src/                          # Código fonte da Aplicação
+    api/                        # Abstração da API backend
+    assets/                     # Alguns arquivos CSSs, Fonts, dentre outros, globais do projeto
+    components/                 # Armazena todos os componentes "globais" do projeto
+    config/                     # Armazena as onfigurações globais do projeto
+    enums/                      # Armazena valores que são utilizados em vários lugares dos códigos
+    hooks/                      # Armazen os hooks globais do projeto
+    layout/                     # Layout ao App
+    modules/                    # Armazena e separa os contextos do projeto
+    services/                   # Serviços
+    store/                      # Store principal do App
+    utils/                      # Utilitários do App
+  .env                          # Configuração de Variáveis de ambiente
+  .gitignore                    # Arquivos a serem ignorados no repositório
+  .prettierrc                   #
+  craco.config.js               #
+  jsconfig.json                 #
+  package.json                  # Arquivo de dependências do projeto
+  README.md                     # Documentação resumida
+  tailwind.config.js            # Configuração do Tailing
+  yarn.lock                     #
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Build da imagem**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acessar diretorio
 
-## Learn More
+```bash
+cd frontend-nextjs
+```
 
-To learn more about Next.js, take a look at the following resources:
+Fazer o build do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+yarn build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Gerar imagem Docker
 
-## Deploy on Vercel
+```bash
+docker image build -t jeanbarcellos/project101_frontend-nextjs .
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Developement**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Criar diretório do projeto e dar permissão:
 
-## Referencias
+```bash
+# Se o projeto ainda não existir
+mkdir /home/project-dir
+
+sudo chown -R <USERNAME> /home/project-dir
+```
+
+Rodar um container com volume `Bind mounts`
+
+```bash
+docker run --rm --volume "$(pwd):/srv/react-docker" --workdir "/srv/react-docker" --publish 3000:3000 -it node bash
+
+# ou
+docker run --rm --volume "<PROJECT-PATH-ABS>:/srv/react-docker" --workdir "/srv/react-docker" --publish 3000:3000 -it node bash
+```
+
+- Em `<PROJECT-PATH-ABS>` informar o path absoluto deste projeto+
+
+Exemplo:
+
+```bash
+docker run --rm --volume "/home/jean.barcellos/www/project-101/frontend-nextjs:/srv/react-docker" --workdir "/srv/react-docker" --publish 3000:3000 -it node bash
+
+docker run --rm -v "/home/jean.barcellos/www/project-101/frontend-nextjs:/srv/react-docker" -w "/srv/react-docker" -p 3000:3000 -it node bash
+```
+
+<br>
+
+### **Production**
+
+Gerar a imagem
+
+```
+docker build -t jeanbarcellos/project101_frontend-nextjs .
+```
+
+Execução da imagem
+
+Desenvolvimento
+
+```bash
+docker run -i --rm -p 8082:80 --name project101_frontend-nextjs jeanbarcellos/project101_frontend-nextjs
+```
+
+## Referências
 
 https://medium.com/@princesingh808087/setting-up-materail-ui-and-tailwindcss-together-in-nextjs-app-directory-f7e65c3e1ecd
 
